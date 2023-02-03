@@ -1,0 +1,84 @@
+note:
+- kalau jalanin di PM (Package Manager Console), pastikan sudah masuk active directory dr project, dengan perintah CD, contoh:
+PM> cd JTPV2
+PM> ls
+- pastikan 1 level dengan file *.csproj dari project yang akan dibuild migrationnya
+
+- perlu didefine penamaan migration file, semua increment mulai dr 1.
+format : yyyymmddhhmmss_DB_[Versi Major/Apps].[Versi Minor].[revision number].[build].cs
+contoh : 20170616051314_DB_2.1.1.1.cs
+
+//start migration
+dotnet ef migrations add [versi] --context "Access" 
+
+// ==> [versi] diganti dengan konvensi penamaan yang ada di atas
+contoh : 
+-> dotnet ef migrations add 04_04_2022_model_user_management_db_v_01 --context "model_user_managemen" 
+-> dotnet ef migrations add DashboardStarSchema_1.1.1.1 --context "StarSchema" 
+
+//remove migration
+dotnet ef migrations remove --context "Access" // ==> per versi migration
+
+// add context into db file
+optionsBuilder.UseMySql(AppGlobal.get_connection_string()); 
+ optionsBuilder.UseNpgsql(AppGlobal.get_connection_string());
+-> dotnet ef migrations remove --context "Access" 
+-> dotnet ef migrations remove --context "StarSchema" 
+
+//update database
+dotnet ef database update --context "Access"
+
+//update database bisa dihjalankan lewat runtime coding yang ditempatkan di constructor Class Model JTPDBV2 :
+this.Database.Migrate();
+
+
+
+//CONSTRUCTOR OPTION ==>>
+
+//conn string
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+
+  //utk star schema
+  try {
+    if (!optionsBuilder.IsConfigured) {
+      //optionsBuilder.UseSqlServer(JTPDashboardCore.Classes.JTPDashboardCoreGlobal.get_connection_string("StarSchema"));
+      optionsBuilder.UseMySql(JTPDashboardCore.JTPDashboardCoreGlobal.get_connection_string("StarSchema", "MySQL"));
+      CustomizeConfiguration(ref optionsBuilder);
+      base.OnConfiguring(optionsBuilder);
+    }
+  }
+  catch (Exception e) {
+    Console.WriteLine(e.Message);
+  }  
+  
+  //atau utk access
+
+  try {
+    if (!optionsBuilder.IsConfigured) {
+      //optionsBuilder.UseSqlServer(JTPDashboardCore.Classes.JTPDashboardCoreGlobal.get_connection_string("Access"));
+      optionsBuilder.UseMySql(JTPDashboardCore.JTPDashboardCoreGlobal.get_connection_string("Access", "MySQL"));
+      CustomizeConfiguration(ref optionsBuilder);
+      base.OnConfiguring(optionsBuilder);
+    }
+  }
+  catch (Exception e) {
+    Console.WriteLine(e.Message);
+  }
+}
+
+
+protected override void OnModelCreating(ModelBuilder modelBuilder) {
+
+  //rename relasi biar gak exceeding key name length di EF UTAMA ->> StarSchema
+  //paling bawah dari bagian OnModelCreating
+  var index = 0;
+  foreach (var entityType in modelBuilder.Model.GetEntityTypes()) {
+    foreach (var key in entityType.GetKeys()) {
+      key.Relational().Name = "SSKey" + index;
+      Console.WriteLine(key.Relational().Name+" ssModel");
+      index++;
+    }
+  }
+}
+
+>> UseSqlServer bisa diganti UseMySql

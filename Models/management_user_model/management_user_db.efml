@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<efcore context-namespace="jasuindo_models" namespace="jasuindo_models" p1:name="model_user_managemen" p1:Guid="5ac1c6d0-f5b9-4de3-b651-38e85a6cc876" xmlns:p1="http://devart.com/schemas/EntityDeveloper/1.0">
+  <class name="m_organisasi" entity-set="m_organisasi" p1:Guid="4d262677-a43a-44d8-b437-99fbe8e79216">
+    <id name="m_organisasi_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="de2d1b00-2e94-4623-9c07-2da5afceb4eb">
+      <column name="" />
+    </id>
+    <property name="nama_oganisasi" type="String" p1:ValidateRequired="true" p1:Guid="26607227-3143-43cd-a069-6b415b627ed1">
+      <column name="" />
+    </property>
+    <property name="alamat_organisasi" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8a31df87-3ccc-47e0-809d-4ea530e91d55">
+      <column name="" />
+    </property>
+    <property name="status_aktif" type="Boolean" p1:ValidateRequired="true" p1:Guid="d13af0bb-80ef-45ed-8412-d448707f2dfa">
+      <column name="" />
+    </property>
+    <property name="email_organisasi" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="fbabc34a-6406-41fc-a09d-12237b30ad46">
+      <column name="" />
+    </property>
+    <property name="website_organisasi" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="0e6a55e5-fefb-43ec-bacc-75db3acb1f03">
+      <column name="" />
+    </property>
+    <property name="telepon_organisasi" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="640a72a4-6fcd-4108-8b81-55f9bdf94dae">
+      <column name="" />
+    </property>
+    <property name="path_logo_organiasi" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1ddde31d-b7e8-4664-9c31-f50117918d17">
+      <column name="" />
+    </property>
+    <property name="npwp_organiasi" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ae80fdd7-100f-4a4e-bacb-4a520929c90b">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e18e4770-c0dd-4851-9f17-2577b6ee0b85">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9b78de2f-c9f0-4636-b749-76b448e132f9">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="194d2532-4a3c-4493-8830-3f81a644107e">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="59a25013-b464-4c66-8ab9-17dbdcce99d9">
+      <column name="" />
+    </property>
+  </class>
+  <class name="m_lokasi" entity-set="m_lokasi" p1:Guid="defeda40-4596-43db-a9a2-71286d3c1e54">
+    <id name="m_lokasi_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="46d88633-1593-4b16-81ef-5c5a9be907ba">
+      <column name="" />
+    </id>
+    <property name="m_organisasi_id" type="Int32" p1:ValidateRequired="true" p1:Guid="028156fe-6d4a-4307-a98e-bf9f4acf1230">
+      <column name="" not-null="False" />
+    </property>
+    <property name="parent_lokasi_id" type="Int32" p1:ValidateRequired="true" p1:Guid="82eb9573-e21f-49a8-8b21-701981f0a374">
+      <column name="" />
+    </property>
+    <property name="parent_index" type="Int32" p1:ValidateRequired="true" p1:Guid="3e34044c-5451-40d0-b84e-3ce030e172bb">
+      <column name="" />
+    </property>
+    <property name="nama_lokasi" type="String" p1:ValidateRequired="true" p1:Guid="14e4132d-68b9-4699-9f81-9a08789ca47b">
+      <column name="" />
+    </property>
+    <property name="kode_lokasi" type="String" p1:ValidateRequired="true" p1:Guid="28e0afb9-adf4-4388-864f-bb87a3cf6968">
+      <column name="" />
+    </property>
+    <property name="provinsi" type="String" p1:ValidateRequired="true" p1:Guid="39fbd64b-6303-4a62-b9e4-272d0fddbdc5">
+      <column name="" />
+    </property>
+    <property name="kabupaten" type="String" p1:ValidateRequired="true" p1:Guid="75088e8f-c2d2-45e6-b220-09607cb48653">
+      <column name="" />
+    </property>
+    <property name="kecamatan" type="String" p1:ValidateRequired="true" p1:Guid="677ea691-ef62-48a6-8d98-f173534aedf4">
+      <column name="" />
+    </property>
+    <property name="kelurahan" type="String" p1:ValidateRequired="true" p1:Guid="0a8ae77b-b03e-4c85-8f15-5bf8fc54b264">
+      <column name="" />
+    </property>
+    <property name="alamat" type="String" p1:ValidateRequired="true" p1:Guid="3af72539-c45d-4f07-8d3d-de5c5b92a389">
+      <column name="" />
+    </property>
+    <property name="status_aktif" type="Boolean" p1:ValidateRequired="true" p1:Guid="5c2a9825-e7ae-4779-8b45-20e075e62801">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ae3453e2-0a19-40bd-99e4-6e74e54b9072">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1e2c26ba-2385-4b3c-9711-899b56f61bbf">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="12770f20-15bf-4567-8ca3-90dd12af3493">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5a321e4d-a85d-46b3-b515-4d4d7a11e14b">
+      <column name="" />
+    </property>
+    <property name="name_location_secondary" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="43b28bf5-d2f0-4ecb-8904-7ec9c04dee3d">
+      <column name="" />
+    </property>
+  </class>
+  <class name="m_kelurahan_desa" entity-set="m_kelurahan_desa" p1:Guid="ebb6d0ea-68f6-4e9c-b2f9-305c5666ede1">
+    <id name="m_kelurahan_desa_id" type="String" p1:ValidateRequired="true" p1:Guid="b3baa94f-8110-40b0-8701-f60dbc6d20ee">
+      <column name="" />
+    </id>
+    <property name="nama_kelurahan_desa" type="String" p1:ValidateRequired="true" p1:Guid="97a5ddbe-f961-4c16-9c5b-ab3f9b640c72">
+      <column name="" length="50" />
+    </property>
+    <property name="nama_kecamatan" type="String" p1:ValidateRequired="true" p1:Guid="8eb2103a-b775-49f5-86a9-156f93258524">
+      <column name="" length="50" />
+    </property>
+    <property name="nama_kabupaten_kota" type="String" p1:ValidateRequired="true" p1:Guid="119349b3-09d0-42be-ac29-dfc0a62d989e">
+      <column name="" length="50" />
+    </property>
+    <property name="jenis_kabupaten_kota" type="String" p1:ValidateRequired="true" p1:Guid="34dee3e4-4dbe-4505-8b32-8c6247f08d27">
+      <column name="" length="10" />
+    </property>
+    <property name="nama_propinsi" type="String" p1:ValidateRequired="true" p1:Guid="dcbf5e1f-cef8-4d4f-9882-3f597180bc32">
+      <column name="" length="50" />
+    </property>
+    <property name="kode_pos" type="String" p1:ValidateRequired="true" p1:Guid="77a70d55-b053-40ca-8748-66ac0e6c7e65">
+      <column name="" length="10" />
+    </property>
+  </class>
+  <class name="m_feature" entity-set="m_feature" p1:Guid="52a3c626-704e-44a0-bde0-a2b1056df40e">
+    <id name="m_feature_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="9592c5d5-59c4-4794-a302-d1d6f0625920">
+      <column name="" />
+    </id>
+    <property name="m_feature_name" type="String" p1:ValidateRequired="true" p1:Guid="7d10274c-bb0b-4e36-a482-f74d342b8267">
+      <column name="" />
+    </property>
+    <property name="index" type="Int32" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a05a5c0e-28d1-4f47-805f-b7d34d15a3db">
+      <column name="" />
+    </property>
+    <property name="name_link_feature" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="5911aa2d-d813-4375-b29a-1b683cb25c5d">
+      <column name="" />
+    </property>
+    <property name="status" type="Boolean" p1:ValidateRequired="true" p1:Guid="721b2a24-3b7b-4002-bf93-a359e9922630">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ad53aca6-f9d5-4acf-9c32-dc585e1bfa0c">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3212a2e8-75b8-4cba-9383-ddf36babf940">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="06be925c-070d-4453-a6ae-d078e132e337">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="62587f09-7b66-4c8d-b3ed-6a661e35a304">
+      <column name="" />
+    </property>
+    <property name="feature_icon" type="String" p1:ValidateRequired="true" p1:Guid="e4788543-2d17-4233-a867-96fe07160909">
+      <column name="" />
+    </property>
+  </class>
+  <class name="map_feature_group" entity-set="map_feature_group" p1:Guid="418ac94a-dd6f-4f2e-af82-74de765e3c16">
+    <id name="map_feature_group_id" type="Guid" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="8e1d0a9d-387a-4095-8bb4-0497a8297a81">
+      <column name="" />
+    </id>
+    <property name="m_group_user_id" type="Int32" p1:ValidateRequired="true" p1:Guid="21a0a403-de82-45d2-b754-ec94678a49ff">
+      <column name="" not-null="False" />
+    </property>
+    <property name="action_feature" type="String" p1:ValidateRequired="true" p1:Guid="8b139827-e191-4b83-b39b-8bb8ff880a24">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="f8aa37ac-2d4e-4b3f-99f1-93fd2637120f">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1c907c63-1af8-472c-a5cc-bf6843c9e2e6">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="81e33e60-7e33-459a-86d2-44044f81275d">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="45323091-36fe-415b-8393-2d4a5fdb132d">
+      <column name="" />
+    </property>
+    <property name="map_feature_group_project_id" type="Guid" p1:ValidateRequired="true" p1:Guid="aa8cec57-64b5-4d86-a0cb-914c192a6eea">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="m_group_user" entity-set="m_group_user" p1:Guid="823ec4fa-9a71-4175-961d-70975df3fd01">
+    <id name="m_group_user_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="1af09db1-0f03-45dd-b83d-450298b02a98">
+      <column name="" />
+    </id>
+    <property name="m_group_user_name" type="String" p1:ValidateRequired="true" p1:Guid="29f9c600-80ef-47a9-8f6c-b90ffb94dc3e">
+      <column name="" />
+    </property>
+    <property name="status" type="Boolean" p1:ValidateRequired="true" p1:Guid="a4fc5eed-41be-4ade-ab2c-267e23092108">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="2cf902b3-210b-4dc3-8db2-3fbe46b88260">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="bac7577f-9b3c-4002-999c-37058844b86a">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="59189af5-126b-4fd5-a97b-8ade310d660d">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dccf7c25-cd4d-4ca4-beea-7bee3506a07c">
+      <column name="" />
+    </property>
+  </class>
+  <class name="m_user" entity-set="m_user" p1:Guid="570ae90c-048a-44ab-a38f-a8e18b090757">
+    <id name="m_user_id" type="Guid" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a2b0b216-b603-4f11-a983-62afd0b5bad7">
+      <column name="" />
+    </id>
+    <property name="m_username" type="String" p1:ValidateRequired="true" p1:Guid="33c68ca4-9aa3-4436-a0c8-07a8333bff53">
+      <column name="" />
+    </property>
+    <property name="m_user_password" type="String" p1:ValidateRequired="true" p1:Guid="31d48a49-72b9-48f3-97a4-49e50e0a6282">
+      <column name="" />
+    </property>
+    <property name="m_user_email" type="String" p1:ValidateRequired="true" p1:Guid="cf2a7b70-b251-45e9-9eba-6de077384b7e">
+      <column name="" />
+    </property>
+    <property name="status" type="Boolean" p1:ValidateRequired="true" p1:Guid="330b42a4-64ea-4aa1-858d-cd23c704e523">
+      <column name="" />
+    </property>
+    <property name="status_aktif" type="String" p1:ValidateRequired="true" p1:Guid="1d68e8ca-0f4e-4363-94b7-c7828dc004e4">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="281b54fb-9311-4301-a3bb-b409d1723211">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cc7771c8-841a-4e70-b399-154fde720d35">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ef6f7891-6824-4eaa-b6aa-88417dea541f">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="cf72561c-19cb-4a2e-87e6-a084f65d8077">
+      <column name="" />
+    </property>
+    <property name="ref1" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="68b0cb15-8047-4e8c-a834-eba213ba5d5a">
+      <column name="" />
+    </property>
+    <property name="ref2" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="adee11dd-3c51-46cf-b80f-a7cb1c3242cc">
+      <column name="" />
+    </property>
+    <property name="ref3" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="ef561617-15b8-4238-83c5-2c3283de63c1">
+      <column name="" />
+    </property>
+  </class>
+  <class name="map_group_user" entity-set="map_group_user" p1:Guid="fb249f28-da98-4167-8001-61ca389f8ae8">
+    <id name="map_group_user_id" type="Guid" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="4362fa6d-c6e9-42a8-8ede-448abe7d024b">
+      <column name="" />
+    </id>
+    <property name="status_aktif" type="Boolean" p1:ValidateRequired="true" p1:Guid="25217e38-b20e-469f-8e69-7ea0c6932db3">
+      <column name="" />
+    </property>
+    <property name="m_group_user_id" type="Int32" p1:ValidateRequired="true" p1:Guid="e12e6e8e-6ceb-4574-8aa3-4a205f250896">
+      <column name="" not-null="False" />
+    </property>
+    <property name="m_project_application_id" type="Int32" p1:ValidateRequired="true" p1:Guid="504f8d00-e287-4c74-b627-e7db85803e94">
+      <column name="" not-null="False" />
+    </property>
+    <property name="m_user_id" type="Guid" p1:ValidateRequired="true" p1:Guid="34cba58c-5092-40ba-84dc-5c6ca597becb">
+      <column name="" not-null="False" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="027f22f1-b0e5-4201-89bf-2c7207858df6">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="1b795bfe-c799-43f6-a4e9-bf567d6ee357">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="3093f429-0718-4000-8ef3-83d5c44fe1cb">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a4ba9176-a819-4e1b-b92b-317a92c51fb6">
+      <column name="" />
+    </property>
+  </class>
+  <class name="m_action_feature" entity-set="m_action_feature" p1:Guid="02a53dca-a791-4650-b6c5-6edea661389e">
+    <id name="m_action_feature_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="54f44be6-b6bd-4877-a596-40c51b175e52">
+      <column name="" />
+    </id>
+    <property name="m_action_feature_name" type="String" p1:ValidateRequired="true" p1:Guid="cf395530-b8be-44b0-b8ae-bd9adb3ec3db">
+      <column name="" unique="True" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="59b83be1-4bb7-442a-a6c1-685580aea947">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="afab0047-32e3-448c-9254-a0480ebd822a">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e9c1944a-8960-4773-8ccb-7b0c2fb2edcb">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="8dec4265-42f6-4a18-ba15-2e1b968c1e9c">
+      <column name="" />
+    </property>
+    <property name="status" type="Boolean" p1:ValidateRequired="true" p1:Guid="e715096a-3ddd-4626-b4bd-e3484e98f07d">
+      <column name="" />
+    </property>
+  </class>
+  <class name="m_project_application" entity-set="m_project_application" p1:Guid="d5d2bbd8-8d81-4001-bf86-42a89e296ebe">
+    <id name="m_project_application_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="e5fce2d8-8435-420d-a1dd-c8133d6a4d83">
+      <column name="" />
+    </id>
+    <property name="m_project_application_name" type="String" p1:ValidateRequired="true" p1:Guid="1f9eb32e-8197-4501-9f5b-6736d61b46fe">
+      <column name="" />
+    </property>
+    <property name="status_aktif" type="Boolean" p1:ValidateRequired="true" p1:Guid="ab7d20d1-289c-479f-8c26-f9a2ec68c47a">
+      <column name="" />
+    </property>
+    <property name="key_project" type="String" p1:ValidateRequired="true" p1:Guid="5d20dc8e-13f9-497a-b6d9-fc41bc40ef47">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e5682876-b298-4366-829a-abbe902161e9">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="59c06d3d-722a-4d55-ace9-70571c4148c1">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6721fff2-e0a3-4ea2-a0c9-6f1366d3d438">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="dc30f629-6246-411c-af1b-43f11e134527">
+      <column name="" />
+    </property>
+    <property name="type_project" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="749eb72e-f284-451b-91e2-8a699d66eca2">
+      <column name="" />
+    </property>
+    <property name="scope_fitur_project" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="b6e2b990-832b-413a-bb98-595ae631c5ad">
+      <column name="" />
+    </property>
+  </class>
+  <class name="map_user_lokasi" entity-set="map_user_lokasi" p1:Guid="070c7103-131d-4ef7-83c8-962391cb0fe8">
+    <id name="map_user_lokasi_id" type="Guid" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="a9c821c0-4ef1-4058-adff-bb510df21307">
+      <column name="" />
+    </id>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="37a5167f-d10b-46a1-bd11-541fdf772a5f">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="d95fed0b-4c24-4ea2-8648-851877783152">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="e58ced7c-4078-496c-bde6-fe054fa240db">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="9ffb810c-f3ef-4a0b-ba3f-d98673b53930">
+      <column name="" />
+    </property>
+    <property name="m_user_id" type="Guid" p1:ValidateRequired="true" p1:Guid="b85b3fbc-49e9-4695-9028-0b3e4b73cc25">
+      <column name="" not-null="False" />
+    </property>
+    <property name="m_project_application_id" type="Int32" p1:ValidateRequired="true" p1:Guid="a1eb3039-5fe8-43ee-bce9-6cb4aae9d955">
+      <column name="" not-null="False" />
+    </property>
+    <property name="m_lokasi_id" type="Int32" p1:ValidateRequired="true" p1:Guid="40964889-f622-4727-b210-2664a25024d8">
+      <column name="" not-null="False" />
+    </property>
+  </class>
+  <class name="m_group_feature" entity-set="m_group_feature" p1:Guid="4fa9234b-148c-48e7-b95f-2ee045eb0cbe">
+    <id name="m_group_feature_id" type="Int32" value-generated="OnAdd" p1:ValidateRequired="true" p1:Guid="65030c42-dc2c-4b39-bb41-b6da1a2629b4">
+      <column name="" />
+    </id>
+    <property name="status" type="Boolean" p1:ValidateRequired="true" p1:Guid="f8620bc2-a683-4d24-bb03-6999d6abcb13">
+      <column name="" />
+    </property>
+    <property name="index" type="Int32" p1:ValidateRequired="true" p1:Guid="9684300c-970f-420c-ab6d-1401c24e4348">
+      <column name="" />
+    </property>
+    <property name="create_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="a62de0be-cf7a-4044-a982-01c546a2c2b4">
+      <column name="" />
+    </property>
+    <property name="create_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="08004382-0e84-40df-ae5c-5766cbb2b9bc">
+      <column name="" />
+    </property>
+    <property name="update_at" type="DateTime" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="6e855079-e20a-4d6d-8c5b-c6c5365e84e3">
+      <column name="" />
+    </property>
+    <property name="update_by" type="String" p1:nullable="True" p1:ValidateRequired="false" p1:Guid="7808a151-40ae-40e2-870d-5da3421a0ba8">
+      <column name="" />
+    </property>
+    <property name="group_feature_name" type="String" p1:ValidateRequired="true" p1:Guid="5f60eecc-6d78-4d75-878c-a06e8bdd8160">
+      <column name="" />
+    </property>
+  </class>
+  <class name="map_feature_group_project" entity-set="map_feature_group_project" p1:Guid="4d13ee3a-fbbb-495f-8205-7b1de330350b">
+    <id name="map_feature_group_project_id" type="Guid" p1:ValidateRequired="true" p1:Guid="dcbbdc20-e99d-4754-875f-a0797207a406">
+      <column name="" />
+    </id>
+    <property name="m_project_application_id" type="Int32" p1:ValidateRequired="true" p1:Guid="fc3e73e1-449b-4c55-9bf2-c65b87fcabd1">
+      <column name="" not-null="False" />
+    </property>
+    <property name="status_aktif" type="Boolean" p1:ValidateRequired="true" p1:Guid="d4471c8d-52d7-404c-87c1-2729598641c4">
+      <column name="" />
+    </property>
+    <property name="m_group_feature_id" type="Int32" p1:ValidateRequired="true" p1:Guid="9d5b6b8a-21f9-47c2-91bc-fffa9f809d0f">
+      <column name="" not-null="False" />
+    </property>
+    <property name="m_feature_id" type="Int32" p1:ValidateRequired="true" p1:Guid="9a612c91-5034-45a9-950e-a42390c2757d">
+      <column name="" not-null="False" />
+    </property>
+    <property name="feature_icon" type="String" p1:ValidateRequired="true" p1:Guid="26ad308e-f118-4a3c-884d-ff5ddc5c7f01">
+      <column name="" />
+    </property>
+  </class>
+  <associations>
+    <association name="m_group_user_map_feature_group" cardinality="OneToMany" on-delete="Restrict" p1:Guid="dcb030ad-0b93-42e3-845f-23aded2ccd67">
+      <end1 multiplicity="One" name="m_group_user" class="map_feature_group" relation-class="m_group_user" constrained="True" lazy="False" p1:Guid="0bb98eae-9924-472f-8a4a-6d496e6ee088">
+        <property name="m_group_user_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_feature_groups" class="m_group_user" relation-class="map_feature_group" lazy="False" p1:Guid="3ccbcd3b-e180-4d8c-a5a8-d3ba3238fbe2">
+        <property name="m_group_user_id" />
+      </end2>
+    </association>
+    <association name="m_group_user_map_group_user" cardinality="OneToMany" p1:Guid="44b8c4c4-54db-4cb1-8ea1-b875195b756d">
+      <end1 multiplicity="One" name="m_group_user" class="map_group_user" relation-class="m_group_user" constrained="True" lazy="False" p1:Guid="636d39d1-ef3f-48e1-9279-101b4d350c9b">
+        <property name="m_group_user_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_group_user" class="m_group_user" relation-class="map_group_user" lazy="False" p1:Guid="cc3dd809-a0a9-4ac1-8f4f-c2b57234e1cf">
+        <property name="m_group_user_id" />
+      </end2>
+    </association>
+    <association name="m_user_map_group_user" cardinality="OneToMany" on-delete="Restrict" p1:Guid="c9aab506-0782-4a80-9a6b-14e020930a05">
+      <end1 multiplicity="One" name="m_user" class="map_group_user" relation-class="m_user" constrained="True" lazy="False" p1:Guid="6f74e9c4-52da-477f-b149-da4e62a49774">
+        <property name="m_user_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_group_user" class="m_user" relation-class="map_group_user" lazy="False" p1:Guid="ee349a6c-d459-4323-a2e2-5b2e858f7294">
+        <property name="m_user_id" />
+      </end2>
+    </association>
+    <association name="m_user_map_user_lokasi" cardinality="OneToMany" on-delete="Restrict" p1:Guid="117cb87d-5c46-4fb0-a05e-064eb4ae2752">
+      <end1 multiplicity="One" name="m_user" class="map_user_lokasi" relation-class="m_user" constrained="True" lazy="False" p1:Guid="3825ea4f-3033-482c-ba1c-9a721b096f0c">
+        <property name="m_user_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_user_lokasi" class="m_user" relation-class="map_user_lokasi" lazy="False" p1:Guid="971611f3-ccea-44bc-8880-f8985aad64bb">
+        <property name="m_user_id" />
+      </end2>
+    </association>
+    <association name="m_organisasi_m_lokasi" cardinality="OneToMany" on-delete="Restrict" p1:Guid="b5ca80d2-1af6-4d21-bac2-2d83631273ab">
+      <end1 multiplicity="One" name="m_organisasi" class="m_lokasi" relation-class="m_organisasi" constrained="True" lazy="False" p1:Guid="91e60163-ce1b-4c86-a2a6-3f27d3787b9e">
+        <property name="m_organisasi_id" />
+      </end1>
+      <end2 multiplicity="Many" name="m_lokasi" class="m_organisasi" relation-class="m_lokasi" lazy="False" p1:Guid="6ef331c0-53ca-4897-a38c-73c05a31921e">
+        <property name="m_organisasi_id" />
+      </end2>
+    </association>
+    <association name="m_project_application_map_user_lokasi" cardinality="OneToMany" on-delete="Restrict" p1:Guid="b6f24c88-5757-47cd-9bc3-04b5f96b0968">
+      <end1 multiplicity="One" name="m_project_application" class="map_user_lokasi" relation-class="m_project_application" constrained="True" lazy="False" p1:Guid="5bf0fc34-4d15-47c7-931e-0395481bd2ab">
+        <property name="m_project_application_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_user_lokasi" class="m_project_application" relation-class="map_user_lokasi" lazy="False" p1:Guid="26cac3b1-023b-42ae-8b42-f8d26092c0f7">
+        <property name="m_project_application_id" />
+      </end2>
+    </association>
+    <association name="m_project_application_map_group_user" cardinality="OneToMany" on-delete="Restrict" p1:Guid="7d4a9181-b27c-48a2-9367-db1078929d34">
+      <end1 multiplicity="One" name="m_project_application" class="map_group_user" relation-class="m_project_application" constrained="True" lazy="False" p1:Guid="3895bdb2-d684-4250-ab63-e2f50f0eabdd">
+        <property name="m_project_application_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_group_user" class="m_project_application" relation-class="map_group_user" lazy="False" p1:Guid="bd18e768-0609-4948-8aa3-95c1d56c0499">
+        <property name="m_project_application_id" />
+      </end2>
+    </association>
+    <association name="m_project_application_map_feature_group_project" cardinality="OneToMany" on-delete="Restrict" p1:Guid="602f4ab5-ed7d-403a-bd98-0dac8beee51b">
+      <end1 multiplicity="One" name="m_project_application" class="map_feature_group_project" relation-class="m_project_application" constrained="True" lazy="False" p1:Guid="1a0969d3-0f0c-483d-ba3f-edebda02fa20">
+        <property name="m_project_application_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_feature_group_project" class="m_project_application" relation-class="map_feature_group_project" lazy="False" p1:Guid="029dcc05-cc20-458a-8140-f62b20ba7287">
+        <property name="m_project_application_id" />
+      </end2>
+    </association>
+    <association name="m_group_feature_map_feature_group_project" cardinality="OneToMany" on-delete="Restrict" p1:Guid="a8c22398-bd97-4eb0-8560-a087cae4ac23">
+      <end1 multiplicity="One" name="m_group_feature" class="map_feature_group_project" relation-class="m_group_feature" constrained="True" lazy="False" p1:Guid="cb663706-416e-4df5-be4a-209c888ac571">
+        <property name="m_group_feature_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_feature_group_project" class="m_group_feature" relation-class="map_feature_group_project" lazy="False" p1:Guid="7d39d894-bc1e-40f6-9249-7d187876a461">
+        <property name="m_group_feature_id" />
+      </end2>
+    </association>
+    <association name="m_feature_map_feature_group_project" cardinality="OneToMany" on-delete="Restrict" p1:Guid="851d3849-1a56-4183-80b1-23d370dc26fa">
+      <end1 multiplicity="One" name="m_feature" class="map_feature_group_project" relation-class="m_feature" constrained="True" lazy="False" p1:Guid="b42c569b-5bba-4268-ab82-b53b09c22397">
+        <property name="m_feature_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_feature_group_project" class="m_feature" relation-class="map_feature_group_project" lazy="False" p1:Guid="0caa22d9-475b-4e0b-a9ca-482aa7d3bfa9">
+        <property name="m_feature_id" />
+      </end2>
+    </association>
+    <association name="map_feature_group_project_map_feature_group" cardinality="OneToMany" on-delete="Restrict" p1:Guid="f103e8ad-a68b-426d-ac22-40d55803e40f">
+      <end1 multiplicity="One" name="map_feature_group_project" class="map_feature_group" relation-class="map_feature_group_project" constrained="True" lazy="False" p1:Guid="3d716ad6-ebc9-4910-8d63-cd53c6581e53">
+        <property name="map_feature_group_project_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_feature_group" class="map_feature_group_project" relation-class="map_feature_group" lazy="False" p1:Guid="57108846-e759-4e74-a9c1-ce66b0ee15ca">
+        <property name="map_feature_group_project_id" />
+      </end2>
+    </association>
+    <association name="m_lokasi_map_user_lokasi" cardinality="OneToMany" on-delete="Restrict" p1:Guid="33dbafef-ef37-4aba-933a-cf498dcced0f">
+      <end1 multiplicity="One" name="m_lokasi" class="map_user_lokasi" relation-class="m_lokasi" constrained="True" lazy="False" p1:Guid="ef14d45b-1fb4-4122-8999-527fb0956cbf">
+        <property name="m_lokasi_id" />
+      </end1>
+      <end2 multiplicity="Many" name="map_user_lokasi" class="m_lokasi" relation-class="map_user_lokasi" lazy="False" p1:Guid="84d9385b-db18-44f5-a258-900ed1eec2bb">
+        <property name="m_lokasi_id" />
+      </end2>
+    </association>
+  </associations>
+</efcore>
