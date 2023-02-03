@@ -1,0 +1,40 @@
+image: docker:latest
+services:
+    - docker:dind
+
+variables:
+    DOCKER_DRIVER: overlay
+
+stages:
+    - build
+    - deploy
+
+build-project:
+    stage: build
+    only:
+        - "master"
+    script:
+        # - sed -i 's/Development/Demo/g' appsettings.json
+        - docker login -u $DR_USER -p $DR_PASSWORD $DR_SERVER
+        - docker build -t $DR_SERVER/jip/dev-$CI_PROJECT_NAME:$CI_PIPELINE_IID -f Dockerfile .
+        - docker tag $DR_SERVER/jip/dev-$CI_PROJECT_NAME:$CI_PIPELINE_IID $DR_SERVER/jip/dev-$CI_PROJECT_NAME:latest
+        - docker push $DR_SERVER/jip/dev-$CI_PROJECT_NAME:$CI_PIPELINE_IID
+        - docker push $DR_SERVER/jip/dev-$CI_PROJECT_NAME:latest
+
+run-on-server:
+    stage: deploy
+    only:
+        - "master"
+    before_script:
+        - mkdir -p ~/.ssh
+        - echo "$SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+        - chmod 600 ~/.ssh/id_rsa
+        - eval "$(ssh-agent -s)"
+        - ssh-add ~/.ssh/id_rsa
+        - ssh-keyscan -H $DEV_IP_SERVER >> ~/.ssh/known_hosts
+    script:
+        - ssh $USER_SSH@$DEV_IP_SERVER -t "docker login -u $DR_USER -p $DR_PASSWORD $DR_SERVER"
+        - ssh $USER_SSH@$DEV_IP_SERVER -t "docker pull ${DR_SERVER}/jip/dev-${CI_PROJECT_NAME}:latest"
+        - ssh $USER_SSH@$DEV_IP_SERVER -t "docker stop ${CI_PROJECT_NAME} || true; docker rm ${CI_PROJECT_NAME} || true"
+        - ssh $USER_SSH@$DEV_IP_SERVER -t "docker run -d --name ${CI_PROJECT_NAME} --restart always -p ${PORT_DEV}:80 -v /etc/hosts:/etc/hosts ${DR_SERVER}/jip/dev-${CI_PROJECT_NAME}"
+        - ssh $USER_SSH@$DEV_IP_SERVER -t "docker image prune -f || true"
